@@ -41,7 +41,7 @@ JsonEditorMain::JsonEditorMain(QWidget *parent) :
     menuSaveAs = new QAction(QIcon(":/ToolbarIcon/images/document-save.png"),tr("SaveAs"),filemenu);
     filemenu->addAction(menuSaveAs);
     QAction* recentFileAction = 0;
-    for(auto i = 0; i < 5; ++i)
+    for(int i = 0; i < 5; ++i)
     {
         recentFileAction = new QAction(this);
         recentFileAction->setVisible(false);
@@ -49,7 +49,7 @@ JsonEditorMain::JsonEditorMain(QWidget *parent) :
         recentFileActionList.append(recentFileAction);
     }
     recentMenu = filemenu->addMenu(tr("&Open Recent"));
-    for(auto i = 0; i < maxFileNr; ++i)
+    for(int i = 0; i < maxFileNr; ++i)
         recentMenu->addAction(recentFileActionList.at(i));
     menuExit = new QAction(QIcon(":/ToolbarIcon/images/system-log-out.png"),tr("Exit"),filemenu);
     filemenu->addAction(menuExit);
@@ -484,7 +484,7 @@ void JsonEditorMain::newFile()
 {
 
     textEdit->clear();
-    jsonTree->setModel(nullptr);
+    jsonTree->setModel(NULL);
     setCurrentFile("");
 }
 
@@ -654,20 +654,20 @@ void JsonEditorMain::updateRecentActionList(){
     QStringList recentFilePaths =
             settings.value("recentFiles").toStringList();
 
-    auto itEnd = 0u;
+    size_t itEnd = 0u;
     if(recentFilePaths.size() <= maxFileNr)
         itEnd = recentFilePaths.size();
     else
         itEnd = maxFileNr;
 
-    for (auto i = 0u; i < itEnd; ++i) {
+    for (size_t i = 0u; i < itEnd; ++i) {
         QString strippedName = QFileInfo(recentFilePaths.at(i)).fileName();
         recentFileActionList.at(i)->setText(strippedName);
         recentFileActionList.at(i)->setData(recentFilePaths.at(i));
         recentFileActionList.at(i)->setVisible(true);
     }
 
-    for (auto i = itEnd; i < (unsigned int) maxFileNr; ++i)
+    for (size_t i = itEnd; i < (size_t) maxFileNr; ++i)
         recentFileActionList.at(i)->setVisible(false);
 }
 
