@@ -18,11 +18,11 @@ extern "C" {
 
 #define JSON_OBJECT_DEF_HASH_ENTRIES 16
 
-#undef FALSE
-#define FALSE ((boolean)0)
+// #undef FALSE
+// #define FALSE ((int)0)
 
-#undef TRUE
-#define TRUE ((boolean)1)
+// #undef TRUE
+// #define TRUE ((int)1)
 
 extern const char *json_number_chars;
 extern const char *json_hex_chars;
@@ -30,8 +30,8 @@ extern const char *json_hex_chars;
 // just use boolean_int sicne it's compatible with linux and windows...
 /* forward structure definitions */
 // #ifdef __MINGW32__
-#define boolean boolean_int
-typedef int boolean_int;
+// #define boolean boolean_int
+// typedef int boolean_int;
 // #else
 // typedef int boolean;
 // #endif
@@ -235,7 +235,7 @@ extern struct json_object* json_object_array_get_idx(struct json_object *obj,
  * @param b a boolean TRUE or FALSE (0 or 1)
  * @returns a json_object of type json_type_boolean
  */
-extern struct json_object* json_object_new_boolean(boolean b);
+extern struct json_object* json_object_new_boolean(int b);
 
 /** Get the boolean value of a json_object
  *
@@ -248,7 +248,7 @@ extern struct json_object* json_object_new_boolean(boolean b);
  * @param obj the json_object instance
  * @returns a boolean
  */
-extern boolean json_object_get_boolean(struct json_object *obj);
+extern int json_object_get_boolean(struct json_object *obj);
 
 
 /* int type methods */
