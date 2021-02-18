@@ -21,6 +21,6 @@ DEPENDPATH += .
 target.path = /libs
 headers.files = $$HEADERS
 headers.path = /include
-INSTALLS += target \
-    headers
+# INSTALLS += target \
+#     headers
 QT += core gui widgets
