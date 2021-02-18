@@ -279,7 +279,7 @@ QString JsonTreeModel::getTypeString(int vType)
     case Json::uintValue:
         typeString = tr("unsigned integer");
         break;
-    defalut:
+    default:
         typeString = tr("type error");
     }
     return typeString;

@@ -27,13 +27,14 @@ extern "C" {
 extern const char *json_number_chars;
 extern const char *json_hex_chars;
 
+// just use boolean_int sicne it's compatible with linux and windows...
 /* forward structure definitions */
-#ifdef __MINGW32__
+// #ifdef __MINGW32__
 #define boolean boolean_int
 typedef int boolean_int;
-#else
-typedef int boolean;
-#endif
+// #else
+// typedef int boolean;
+// #endif
 typedef struct printbuf printbuf;
 typedef struct lh_table lh_table;
 typedef struct array_list array_list;
