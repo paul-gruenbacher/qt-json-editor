@@ -66,8 +66,6 @@ signals:
     void valueChanged(QString newValue);
 
 private slots:
-    void toggleFileToolbar(bool checked);
-    void toggleEditToolbar(bool checked);
     void toggleFindToolbar(bool checked);    
     void refreshJsonTree();
     void insertTreeNode();

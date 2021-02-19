@@ -111,9 +111,7 @@ JsonEditorMain::JsonEditorMain(QWidget *parent) :
     layout->addLayout(layout1,1);
     layout1->addWidget(jsonCode);
     layout1->addWidget(jsonTree);
-    connect(menuFind, SIGNAL(toggled(bool)), this, SLOT(toggleFindToolbar(bool)));
-    connect(fileToolBar, SIGNAL(toggled(bool)), this, SLOT(toggleFileToolbar(bool)));
-    connect(EditToolBar, SIGNAL(toggled(bool)), this, SLOT(toggleEditToolbar(bool)));
+    connect(menuFind, SIGNAL(toggled(bool)), this, SLOT(toggleFindToolbar(bool))); 
     connect(menuRefresh, SIGNAL(triggered()), this, SLOT(refreshJsonTree()));
     connect(menuInsertNode, SIGNAL(triggered()), this, SLOT(insertTreeNode()));
     connect(menuInsertChild, SIGNAL(triggered()), this, SLOT(insertTreeChild()));
@@ -169,16 +167,6 @@ void JsonEditorMain::changeEvent(QEvent *e)
     default:
         break;
     }
-}
-
-void JsonEditorMain::toggleEditToolbar(bool checked)
-{
-    checked ? EditToolBar->show() : EditToolBar->hide();
-}
-
-void JsonEditorMain::toggleFileToolbar(bool checked)
-{
-    checked ? fileToolBar->show() : fileToolBar->hide();
 }
 
 void JsonEditorMain::toggleFindToolbar(bool checked)
