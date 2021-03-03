@@ -12,6 +12,7 @@ add_library(JsonEditor
 	${UI_SOURCES}
 )
 
+target_compile_definitions(JsonEditor PUBLIC USE_JSON_EDITOR)
 target_include_directories(JsonEditor PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(JsonEditor PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dialogs)
 target_link_libraries(JsonEditor PUBLIC Qt5::Widgets)
