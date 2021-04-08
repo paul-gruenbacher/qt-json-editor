@@ -129,7 +129,7 @@ JsonEditorMain::JsonEditorMain(QWidget *parent) :
     JSHighlighter * highlight = new JSHighlighter(jsonCode->document());
 
     textEdit = jsonCode;
-    connect(textEdit->document(), SIGNAL(contentsChanged()), this, SLOT(documentWasModified()));
+//    connect(textEdit->document(), SIGNAL(contentsChanged()), this, SLOT(documentWasModified()));
 
     m_findDialog = new FindDialog(this);
     m_findDialog->setModal(false);
@@ -397,10 +397,10 @@ void JsonEditorMain::dataEdit(QModelIndex editIndex)
     }
 }
 
-void JsonEditorMain::documentWasModified()
-{
-    setWindowModified(textEdit->document()->isModified());
-}
+//void JsonEditorMain::documentWasModified()
+//{
+//    setWindowModified(textEdit->document()->isModified());
+//}
 
 void JsonEditorMain::closeEvent(QCloseEvent *event)
 {

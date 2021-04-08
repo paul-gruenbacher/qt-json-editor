@@ -78,7 +78,7 @@ private slots:
     void open();
     bool save();
     bool saveAs();
-    void documentWasModified();
+//    void documentWasModified();
     void newFile();
     void close();
     void undo();
